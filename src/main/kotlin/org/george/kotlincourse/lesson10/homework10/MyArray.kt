@@ -1,6 +1,5 @@
 package org.george.kotlincourse.lesson10.homework10
 
-class MyArray {
     fun main() {
     //Задание 1: Создание и Инициализация Массива
     val int: Array<Int> = arrayOf(1, 2, 3, 4, 5)
@@ -9,7 +8,7 @@ class MyArray {
     val empty = arrayOfNulls<String>(10)
 
     //Задание 3: Заполнение Массива в Цикле
-    val double = arrayOfNulls<Double?>(5)
+    val double = arrayOfNulls<Double>(5)
     for (i in 0 until 5){
         double[i] = i*2.0
     }
@@ -57,6 +56,12 @@ class MyArray {
         }
 
     //Задание 10: Поиск Значения в Массиве по вхождению
+    fun find2(array: Array<String>, string: String) : String {
+        for (i in 0 until array.size) {
+            if (array[i].contains(string))
+                return array[i]
 
-}
+        }
+        return "null"
+    }
 }

@@ -1,6 +1,8 @@
 package org.george.kotlincourse.lesson10.homework10
 
-class MyList {
+
+
+
     fun main() {
 
         //Задание 1: Создание Пустого Списка
@@ -32,12 +34,38 @@ class MyList {
             stringList.get(1)
 
         //Задание 8: Перезапись Элементов Списка по Индексу
+        val intList2 : MutableList<Int> = mutableListOf(1, 3, 8, 27, 81)
+        intList2.set(2, 9)
 
         //Задание 9: Объединение Двух Списков
+        val strList1 : List<String> = listOf("somebody", "once")
+        val strList2 : List<String> = listOf("told", "me")
+        val strList3 : MutableList<String> = mutableListOf("null")
+
+        for (i in 0 until strList1.size + strList2.size){
+            for (j in 0 until strList1.size){
+                strList3.set(i, strList1.get(j))
+            }
+            if(i >= strList1.size){
+                for (j in 0 until strList2.size) {
+                strList3.set(i, strList2.get(j))
+                }
+            }
+        }
 
         //Задание 10: Нахождение Минимального/Максимального Элемента
+        val  minmaxList : List<Int> = listOf(1, 0 ,15, -2, 17, 205, 27)
+        var min : Int = minmaxList.get(0)
+        var max : Int = minmaxList.get(0)
+        for(i in 0 until minmaxList.size){
+            if (minmaxList.get(i) < min) min = minmaxList.get(i)
+            if (minmaxList.get(i) > max) max = minmaxList.get(i)
+        }
 
         //Задание 11: Фильтрация Списка
+        val evenInt = mutableListOf<Int>()
+        for (i in 0 until intList.size) {
+        if(intList[i] % 2 ==0) evenInt.add(intList[i])
+    }
 
     }
-}
